@@ -2,19 +2,17 @@ package model.entities;
 
 import model.exceptions.DomainException;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Reservation {
     private Integer roomNumber;
-    private Date checkIn;
-    private Date checkOut;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
-        if (!checkOut.after(checkIn)) {
+    public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {
+        if (!checkOut.isAfter(checkIn)) {
             throw new DomainException("check-out date must be after check-in date.");
         }
         this.roomNumber = roomNumber;
@@ -30,25 +28,24 @@ public class Reservation {
         this.roomNumber = roomNumber;
     }
 
-    public Date getCheckIn() {
+    public LocalDate getCheckIn() {
         return checkIn;
     }
 
-    public Date getCheckOut() {
+    public LocalDate getCheckOut() {
         return checkOut;
     }
 
     public long duration() {
-        long diff = checkOut.getTime() - checkIn.getTime();
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
-        Date now = new Date();
-        if (checkIn.before(now) || checkOut.before(now)) {
+    public void updateDates(LocalDate checkIn, LocalDate checkOut) {
+        LocalDate now = LocalDate.now();
+        if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
             throw new DomainException("reservation dates for update must be future dates.");
         }
-        if (!checkOut.after(checkIn)) {
+        if (!checkOut.isAfter(checkIn)) {
             throw new DomainException("check-out date must be after check-in date.");
         }
 
@@ -61,9 +58,9 @@ public class Reservation {
         return "Room "
                 + roomNumber
                 + ", check-in: "
-                + sdf.format(checkIn)
+                + checkIn.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
                 + ", check-out: "
-                + sdf.format(checkOut)
+                + checkOut.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
                 + ", "
                 + duration()
                 + " nights.";

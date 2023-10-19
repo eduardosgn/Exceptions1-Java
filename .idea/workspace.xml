@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9614a59-f414-4ecd-8430-0a122b9cd560" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/entities/Reservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/exceptions/DomainException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExExcessoes1/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExExcessoes1/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ExExcessoes1/entities/Reservation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Reservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/entities/Reservation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
