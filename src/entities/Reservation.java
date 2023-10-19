@@ -1,7 +1,6 @@
 package entities;
 
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +9,7 @@ public class Reservation {
     private Date checkIn;
     private Date checkOut;
 
-    private static final DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
         this.roomNumber = roomNumber;
@@ -36,12 +35,21 @@ public class Reservation {
 
     public long duration() {
         long diff = checkOut.getTime() - checkIn.getTime();
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MICROSECONDS);
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    public String updateDates(Date checkIn, Date checkOut) {
+        Date now = new Date();
+        if (checkIn.before(now) || checkOut.before(now)) {
+            return "reservation dates for update must be future dates.";
+        }
+        if (!checkOut.after(checkIn)) {
+            return "check-out date must be after check-in date.";
+        }
+
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null;
     }
 
     @Override
@@ -49,9 +57,9 @@ public class Reservation {
         return "Room "
                 + roomNumber
                 + ", check-in: "
-                + fmt1.format((TemporalAccessor) checkIn)
+                + sdf.format(checkIn)
                 + ", check-out: "
-                + fmt1.format((TemporalAccessor) checkOut)
+                + sdf.format(checkOut)
                 + ", "
                 + duration()
                 + " nights.";
