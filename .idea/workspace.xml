@@ -5,18 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9614a59-f414-4ecd-8430-0a122b9cd560" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/entities/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/exceptions/DomainException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExExcessoes1/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ExExcessoes1/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ExExcessoes1/entities/Reservation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Reservation.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="metodo-um-pouco-ruim" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "metodo-um-pouco-ruim"
+    "git-widget-placeholder": "metodo-bom"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
